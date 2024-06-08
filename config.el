@@ -78,3 +78,6 @@
 
 ;; Org mode
 (setq org-log-done 'time)
+
+;; Git branch modeline update
+(setq auto-revert-check-vc-info t)
