@@ -81,3 +81,6 @@
 
 ;; Git branch modeline update
 (setq auto-revert-check-vc-info t)
+
+;; Fortran
+(setq fortran-line-length 200)
