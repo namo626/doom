@@ -83,4 +83,4 @@
 (setq auto-revert-check-vc-info t)
 
 ;; Fortran
-(setq fortran-line-length 200)
+(setq-default fortran-line-length 200)
