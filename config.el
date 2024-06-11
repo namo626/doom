@@ -78,6 +78,14 @@
 
 ;; Org mode
 (setq org-log-done 'time)
+; DOn't put extra newline when creating new bullets
+(setq org-blank-before-new-entry (quote ((heading . nil)
+                                         (plain-list-item . nil))))
+(add-hook 'org-mode-hook '(lambda () (setq fill-column 80)))
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
+;; (setq
+;;     org-superstar-headline-bullets-list '("⁖" "◉" "○" "✸" "✿")
+;; )
 
 ;; Git branch modeline update
 (setq auto-revert-check-vc-info t)
