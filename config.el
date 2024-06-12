@@ -83,9 +83,12 @@
                                          (plain-list-item . nil))))
 (add-hook 'org-mode-hook '(lambda () (setq fill-column 80)))
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
-;; (setq
-;;     org-superstar-headline-bullets-list '("⁖" "◉" "○" "✸" "✿")
-;; )
+(setq org-todo-keywords
+      '((sequence "TODO" "WORKING" "|" "DONE" )))
+(setq
+    org-superstar-headline-bullets-list '("◉" "○" "*" "✸" "✿")
+)
+(setq org-hide-emphasis-markers t)
 
 ;; Git branch modeline update
 (setq auto-revert-check-vc-info t)
