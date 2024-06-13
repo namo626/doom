@@ -82,12 +82,22 @@
                                          (plain-list-item . nil))))
 (add-hook 'org-mode-hook '(lambda () (setq fill-column 80)))
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
-(setq org-todo-keywords
-      '((sequence "TODO" "WORKING" "|" "DONE" )))
+(setq org-todo-keywords '((sequence "TODO" "WORKING" "|" "DONE" )))
+(setq org-todo-keyword-faces
+ '(("WORKING" . "orange") ))
+
 (setq
     org-superstar-headline-bullets-list '("◉" "○" "*" "✸" "✿")
 )
 (setq org-hide-emphasis-markers t)
+
+;; (setq org-agenda-span 'day)
+(setq org-agenda-custom-commands
+  '(("n" "Agenda / INTR / PROG / NEXT"
+     ((agenda "" nil)
+      (todo "TODO" nil)
+      (todo "WORKING" nil))
+     nil)))
 
 ;; Git branch modeline update
 (setq auto-revert-check-vc-info t)
