@@ -95,8 +95,8 @@
 (setq org-agenda-custom-commands
   '(("n" "Agenda / INTR / PROG / NEXT"
      ((agenda "" nil)
-      (todo "TODO" nil)
-      (todo "WORKING" nil))
+      (todo "WORKING" nil)
+      (todo "TODO" nil))
      nil)))
 
 ;; Git branch modeline update
