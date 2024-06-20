@@ -40,7 +40,7 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/Documents/orgmode/")
-(setq org-agenda-files '("~/Documents/orgmode/"))
+(setq org-agenda-files '("~/Documents/orgmode/" "~/Documents/orgmode/roam/"))
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -82,9 +82,10 @@
                                          (plain-list-item . nil))))
 (add-hook 'org-mode-hook '(lambda () (setq fill-column 80)))
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
-(setq org-todo-keywords '((sequence "TODO" "WORKING" "|" "DONE" )))
+(setq org-todo-keywords '((sequence "TODO" "WORKING" "CANCELED" "|" "DONE" )))
 (setq org-todo-keyword-faces
- '(("WORKING" . "orange") ))
+ '(("WORKING" . "orange") ("CANCELED" . (:foreground "white" :background "#4d4d4d" :weight bold)))
+ )
 
 (setq
     org-superstar-headline-bullets-list '("◉" "○" "*" "✸" "✿")
@@ -96,7 +97,8 @@
   '(("n" "Agenda / INTR / PROG / NEXT"
      ((agenda "" nil)
       (todo "WORKING" nil)
-      (todo "TODO" nil))
+      (todo "TODO" nil)
+      (todo "CANCELED" nil))
      nil)))
 
 ;; Git branch modeline update
