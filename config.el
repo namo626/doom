@@ -76,30 +76,32 @@
 ;; they are implemented.
 
 ;; Org mode
-(setq org-log-done 'time)
-; DOn't put extra newline when creating new bullets
-(setq org-blank-before-new-entry (quote ((heading . nil)
-                                         (plain-list-item . nil))))
-(add-hook 'org-mode-hook '(lambda () (setq fill-column 80)))
-(add-hook 'org-mode-hook 'turn-on-auto-fill)
-(setq org-todo-keywords '((sequence "TODO" "WORKING" "CANCELED" "|" "DONE" )))
-(setq org-todo-keyword-faces
- '(("WORKING" . "orange") ("CANCELED" . (:foreground "white" :background "#4d4d4d" :weight bold)))
- )
+(after! org
+  (setq org-log-done 'time)
+                                        ; DOn't put extra newline when creating new bullets
+  (setq org-blank-before-new-entry (quote ((heading . nil)
+                                           (plain-list-item . nil))))
+  (add-hook 'org-mode-hook '(lambda () (setq fill-column 80)))
+  (add-hook 'org-mode-hook 'turn-on-auto-fill)
+  (setq org-todo-keywords '((sequence "TODO" "WORKING" "CANCELED" "|" "DONE" )))
+  (setq org-todo-keyword-faces
+        '(("WORKING" . "orange") ("CANCELED" . (:foreground "white" :background "#4d4d4d" :weight bold)))
+        )
 
-(setq
-    org-superstar-headline-bullets-list '("◉" "○" "*" "✸" "✿")
-)
-(setq org-hide-emphasis-markers t)
+  (setq
+   org-superstar-headline-bullets-list '("◉" "○" "*" "✸" "✿")
+   )
+  (setq org-hide-emphasis-markers t)
 
-;; (setq org-agenda-span 'day)
-(setq org-agenda-custom-commands
-  '(("n" "Agenda / INTR / PROG / NEXT"
-     ((agenda "" nil)
-      (todo "WORKING" nil)
-      (todo "TODO" nil)
-      (todo "CANCELED" nil))
-     nil)))
+  ;; (setq org-agenda-span 'day)
+  (setq org-agenda-custom-commands
+        '(("n" "Agenda / INTR / PROG / NEXT"
+           ((agenda "" nil)
+            (todo "WORKING" nil)
+            (todo "TODO" nil)
+            (todo "CANCELED" nil))
+           nil)))
+  )
 
 ;; Git branch modeline update
 (setq auto-revert-check-vc-info t)
