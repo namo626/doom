@@ -108,3 +108,6 @@
 
 ;; Fortran
 (setq-default fortran-line-length 200)
+(map! :after fortran
+      :map evil-insert-state-map
+      "RET" #'reindent-then-newline-and-indent)
