@@ -111,3 +111,6 @@
 (map! :after fortran
       :map evil-insert-state-map
       "RET" #'reindent-then-newline-and-indent)
+
+;; Racket
+(add-hook 'racket-mode-hook (lambda () (racket-smart-open-bracket-mode -1)))
