@@ -113,4 +113,10 @@
       "RET" #'reindent-then-newline-and-indent)
 
 ;; Racket
-(add-hook 'racket-mode-hook (lambda () (racket-smart-open-bracket-mode -1)))
+(after! racket
+  (add-hook 'racket-mode-hook '(lambda () (racket-smart-open-bracket-mode -1)))
+  ;(racket-smart-open-bracket-mode -1)
+)
+
+;; SSH
+(setq-default tramp-ssh-controlmaster-options nil)
