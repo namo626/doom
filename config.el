@@ -109,7 +109,8 @@
 ;; Fortran
 (setq-default fortran-line-length 200)
 (map! :after fortran
-      :map evil-insert-state-map
+      ;:map evil-insert-state-map
+      :map fortran-mode-map
       "RET" #'reindent-then-newline-and-indent)
 
 ;; Racket
@@ -120,3 +121,10 @@
 
 ;; SSH
 (setq-default tramp-ssh-controlmaster-options nil)
+
+;; Clojure
+(after! clojure
+  (define-key paredit-mode-map (kbd "RET") nil))
+(after! cider
+  (set-popup-rule! "cider" :ignore t))
+(plist-put +popup-defaults :modeline t)
