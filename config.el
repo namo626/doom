@@ -101,7 +101,8 @@
             (todo "TODO" nil)
             (todo "CANCELED" nil))
            nil)))
-  )
+  (add-hook 'org-mode-hook '(lambda () (company-mode -1)) ))
+
 
 ;; Git branch modeline update
 (setq auto-revert-check-vc-info t)
@@ -120,7 +121,9 @@
 )
 
 ;; SSH
-(setq-default tramp-ssh-controlmaster-options nil)
+(after! evil
+  (setq evil-respect-visual-line-mode t)
+  (setq-default tramp-use-ssh-controlmaster-options nil))
 
 ;; Clojure
 (after! clojure
