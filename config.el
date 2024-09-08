@@ -21,8 +21,8 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-;; (setq doom-font (font-spec :family "Fira Code" :size 13 :weight 'semi-light))
-(setq doom-font (font-spec :family "Fantasque Sans Mono" :size 15 :weight 'normal))
+;; (setq doom-font (font-spec :family "Fira Code" :size 13 :weight 'normal))
+(setq doom-font (font-spec :family "Julia Mono" :size 14 :weight 'normal))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-vibrant)
+(setq doom-theme 'doom-spacegrey)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -132,3 +132,7 @@
 (after! cider
   (set-popup-rule! "cider" :ignore t))
 (plist-put +popup-defaults :modeline t)
+
+;; Xetex
+(after! latex
+  (setq-default TeX-engine 'xetex))
