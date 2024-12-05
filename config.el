@@ -40,8 +40,9 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/Documents/orgmode/")
-(setq org-agenda-files '("~/Documents/orgmode/" "~/Documents/orgmode/roam/"))
+(setq org-directory "~/MEGA/orgmode/")
+(setq org-agenda-files '("~/MEGA/orgmode/" "~/MEGA/orgmode/roam/"))
+(setq org-roam-directory "~/MEGA/orgmode")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -102,7 +103,8 @@
             (todo "TODO" nil)
             (todo "CANCELED" nil))
            nil)))
-  (add-hook 'org-mode-hook '(lambda () (company-mode -1)) ))
+  (add-hook 'org-mode-hook '(lambda () (company-mode -1)) )
+  (setq evil-want-C-i-jump nil))
 
 
 ;; Git branch modeline update
@@ -113,6 +115,10 @@
 (map! :after fortran
       ;:map evil-insert-state-map
       :map fortran-mode-map
+      "RET" #'reindent-then-newline-and-indent)
+(map! :after fortran
+      ;:map evil-insert-state-map
+      :map f90-mode-map
       "RET" #'reindent-then-newline-and-indent)
 
 ;; Racket
