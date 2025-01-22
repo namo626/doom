@@ -111,6 +111,7 @@
 (setq auto-revert-check-vc-info t)
 
 ;; Fortran
+(add-hook 'fortran-mode-local-vars-hook #'lsp)
 (setq-default fortran-line-length 200)
 (map! :after fortran
       ;:map evil-insert-state-map
