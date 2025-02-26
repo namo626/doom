@@ -22,7 +22,7 @@
 ;; accept. For example:
 ;;
 ;; (setq doom-font (font-spec :family "Fira Code" :size 13 :weight 'normal))
-(setq doom-font (font-spec :family "Julia Mono" :size 14 :weight 'normal))
+(setq doom-font (font-spec :family "Maple Mono" :size 14 :weight 'normal))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -130,7 +130,7 @@
 
 ;; SSH
 (after! evil
-  (setq evil-respect-visual-line-mode t)
+  (setq evil-respect-visual-line-mode nil)
   (setq-default tramp-use-ssh-controlmaster-options nil))
 
 ;; Clojure
@@ -143,3 +143,8 @@
 ;; Xetex
 (after! latex
   (setq-default TeX-engine 'xetex))
+
+(after! tramp
+  (add-to-list 'tramp-remote-path 'tramp-own-remote-path))
+
+(global-visual-line-mode 1)
