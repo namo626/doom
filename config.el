@@ -21,7 +21,7 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "Fira Code" :size 14 :weight 'semi-light))
+(setq doom-font (font-spec :family "JetBrains Mono" :size 14 :weight 'regular))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -31,7 +31,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-nord)
+(setq doom-theme 'doom-lantern)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -108,11 +108,17 @@
 (setq auto-revert-check-vc-info t)
 
 ;; Fortran
+(add-hook 'fortran-mode-local-vars-hook #'lsp)
 (setq-default fortran-line-length 200)
 (map! :after fortran
       ;:map evil-insert-state-map
       :map fortran-mode-map
       "RET" #'reindent-then-newline-and-indent)
+(map! :after f90
+      ;:map evil-insert-state-map
+      :map f90-mode-map
+      "RET" #'reindent-then-newline-and-indent)
+
 
 ;; Racket
 (after! racket
@@ -122,7 +128,7 @@
 
 ;; SSH
 (after! evil
-  (setq evil-respect-visual-line-mode t)
+  (setq evil-respect-visual-line-mode nil)
   (setq-default tramp-use-ssh-controlmaster-options nil))
 
 ;; Clojure
