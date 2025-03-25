@@ -117,7 +117,7 @@
       ;:map evil-insert-state-map
       :map fortran-mode-map
       "RET" #'reindent-then-newline-and-indent)
-(map! :after fortran
+(map! :after f90
       ;:map evil-insert-state-map
       :map f90-mode-map
       "RET" #'reindent-then-newline-and-indent)
@@ -148,3 +148,6 @@
   (add-to-list 'tramp-remote-path 'tramp-own-remote-path))
 
 (global-visual-line-mode 1)
+
+;; LSP
+(setq-default lsp-lens-enable nil)
