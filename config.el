@@ -22,7 +22,7 @@
 ;; accept. For example:
 ;;
 ;; (setq doom-font (font-spec :family "Fira Code" :size 13 :weight 'normal))
-(setq doom-font (font-spec :family "Maple Mono" :size 14 :weight 'normal))
+(setq doom-font (font-spec :family "IBM Plex Mono" :size 13 :weight 'normal))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -151,3 +151,10 @@
 
 ;; LSP
 (setq-default lsp-lens-enable nil)
+(setq lsp-ui-sideline-enable nil)
+(setq lsp-ui-doc-show-with-cursor nil)
+(setq lsp-ui-sideline-enable nil)
+(setq lsp-diagnostics-provider :none)
+
+(remove-hook 'after-init-hook 'global-flycheck-mode)
+
