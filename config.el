@@ -158,3 +158,7 @@
 
 (remove-hook 'after-init-hook 'global-flycheck-mode)
 
+
+;; Python
+(after! python
+  (add-hook 'python-mode-hook (lambda () (eldoc-mode 0))))
