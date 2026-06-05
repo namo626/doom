@@ -161,4 +161,7 @@
 
 ;; Python
 (after! python
-  (add-hook 'python-mode-hook (lambda () (eldoc-mode 0))))
+  (add-hook 'python-mode-hook #'lsp)
+  (add-hook 'python-mode-hook (lambda () (flycheck-mode -1)))
+  (add-hook 'python-mode-hook (lambda () (global-eldoc-mode -1)))
+  (add-hook 'python-mode-hook (lambda () (eldoc-mode -1))))
