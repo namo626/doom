@@ -50,4 +50,4 @@
 ;; (unpin! t)
 ;(package! clojure :disable t)
 
-(package! clay)
+;(package! clay)

@@ -119,6 +119,10 @@
       :map f90-mode-map
       "RET" #'reindent-then-newline-and-indent)
 
+;; Python
+(after! python
+  (add-hook 'lsp-pyright-after-open-hook
+            '(lambda () (setq lsp-pyright-python-executable-cmd "python3"))))
 
 ;; Racket
 (after! racket
