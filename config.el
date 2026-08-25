@@ -22,7 +22,8 @@
 ;; accept. For example:
 ;;
 ;; (setq doom-font (font-spec :family "Fira Code" :size 13 :weight 'normal))
-(setq doom-font (font-spec :family "IBM Plex Mono" :size 13 :weight 'normal))
+;; (setq doom-font (font-spec :family "0xProto Nerd Font" :size 13 :weight 'normal))
+(setq doom-font (font-spec :family "Victor Mono" :size 14 :weight 'medium))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -32,7 +33,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-nord-light)
+(setq doom-theme 'doom-oksolar-dark)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -154,6 +155,8 @@
 (setq lsp-ui-sideline-enable nil)
 (setq lsp-ui-doc-show-with-cursor nil)
 (setq lsp-ui-sideline-enable nil)
+(setq lsp-signature-auto-activate nil)
+(setq lsp-signature-render-documentation nil)
 (setq lsp-diagnostics-provider :none)
 
 (remove-hook 'after-init-hook 'global-flycheck-mode)
